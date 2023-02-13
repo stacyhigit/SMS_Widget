@@ -46,6 +46,11 @@
             android:exported="true"
             android:permission="android.permission.BIND_REMOTEVIEWS" >
         </service>
+        <service
+            android:name=".SMSJobService"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE" >
+        </service>
     </application>
 
 </manifest>
