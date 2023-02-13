@@ -9,9 +9,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
-import android.provider.Telephony;
-import android.util.Log;
 import android.view.View;
 import android.widget.RemoteViews;
 
@@ -24,7 +21,6 @@ public class SMSWidget extends AppWidgetProvider {
     public static final String EXTRA_ITEM_POSITION = "com.eatthetoad.smsWidget.extraItemPosition";
     public static final String EXTRA_ITEM_NUMBERS = "com.eatthetoad.smsWidget.extraItemNumbers";
     public static final String EXTRA_ITEM_ID = "com.eatthetoad.smsWidget.extraItemId";
-    protected SMSContentObserver smsContentObserver;
 
     void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
                                 int appWidgetId) {
@@ -81,7 +77,7 @@ public class SMSWidget extends AppWidgetProvider {
         views.setOnClickPendingIntent(R.id.iv_edit_sms, createSmsPendingIntent);
         appWidgetManager.updateAppWidget(appWidgetId, views);
         appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetId, R.id.lv_messages);
-        startContentObserver(context);
+        SMSJobService.startJobService(context);
     }
 
     @Override
@@ -102,11 +98,11 @@ public class SMSWidget extends AppWidgetProvider {
         if (extras != null) {
             appWidgetId = extras.getInt(AppWidgetManager.EXTRA_APPWIDGET_ID, AppWidgetManager.INVALID_APPWIDGET_ID);
         }
-        startContentObserver(context);
+        SMSJobService.startJobService(context);
 
         switch (intent.getAction()) {
             case ACTION_REFRESH:
-                startContentObserver(context);
+                SMSJobService.startJobService(context);
                 if (appWidgetId == AppWidgetManager.INVALID_APPWIDGET_ID) {
                     appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds, R.id.lv_messages);
                 } else {
@@ -150,21 +146,11 @@ public class SMSWidget extends AppWidgetProvider {
 
     @Override
     public void onEnabled(Context context) {
-        startContentObserver(context);
+        SMSJobService.startJobService(context);
     }
 
     @Override
     public void onDisabled(Context context) {
-        if (smsContentObserver != null) {
-            smsContentObserver.unregisterAndStop(context);
-        }
-    }
-
-    private void startContentObserver(Context context) {
-        if (smsContentObserver == null && PermissionManager.checkAllPermissions(context)) {
-            smsContentObserver = new SMSContentObserver(context, new Handler());
-            context.getContentResolver().registerContentObserver(Telephony.MmsSms.CONTENT_URI,
-                    false, smsContentObserver);
-        }
+        SMSJobService.stopJobService(context);
     }
 }
