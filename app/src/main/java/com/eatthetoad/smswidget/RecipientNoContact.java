@@ -14,7 +14,7 @@ public class RecipientNoContact extends Recipient {
             if (number.matches(".*[a-zA-Z].*")) {
                 return number;
             } else {
-                return SMSDataProvider.formatNumber(getNumber());
+                return SMSDataProvider.formatNumber(number);
             }
         }
     }
