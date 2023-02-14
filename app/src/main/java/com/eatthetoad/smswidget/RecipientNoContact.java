@@ -7,10 +7,15 @@ public class RecipientNoContact extends Recipient {
     }
 
     public String getHeader() {
-        if (getNumber().equals("0")) {
+        String number = getNumber();
+        if (number.equals("0")) {
             return "Error retrieving number";
         } else {
-            return SMSDataProvider.formatNumber(getNumber());
+            if (number.matches(".*[a-zA-Z].*")) {
+                return number;
+            } else {
+                return SMSDataProvider.formatNumber(getNumber());
+            }
         }
     }
 }
