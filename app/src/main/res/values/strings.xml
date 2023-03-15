@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">SMS Widget</string>
+    <string name="configure">Configure</string>
+    <string name="app_widget_description">Display Your SMS Conversations</string>
+    <string name="settings">settings</string>
+    <string name="refresh">refresh</string>
+    <string name="loading">loading</string>
+    <string name="create">create</string>
+    <string name="add_permissions">Please add permissions. Long press widget to access application settings.</string>
+    <string name="sms">SMS</string>
+    <string name="sms_widget_settings">SMS Widget Settings</string>
+    <string name="number_of_messages">Number of messages to show:</string>
+    <string name="continue_txt">Continue</string>
+    <string name="add_widget">Add widget</string>
+    <string name="unread">unread</string>
+    <string name="maximum_number_of_lines">Maximum number of lines of text to display:</string>
+    <string name="nothing_found">No messages found</string>
+    <string-array name="message_numbers">
+        <item>"5"</item>
+        <item>"10"</item>
+        <item>"15"</item>
+        <item>"25"</item>
+        <item>"50"</item>
+    </string-array>
+    <string-array name="message_lines">
+        <item>"1"</item>
+        <item>"2"</item>
+        <item>"3"</item>
+        <item>"4"</item>
+        <item>"5"</item>
+    </string-array>
+</resources>

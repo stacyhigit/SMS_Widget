@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/padding_small"
+    android:background="@drawable/app_widget_background"
+    android:theme="@style/Theme.SMSWidget.AppWidgetContainer">
+
+    <RelativeLayout
+        android:layout_margin="@dimen/widget_margin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/ll_header_preview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp">
+
+            <TextView
+                android:id="@+id/tv_updated_preview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="2dp"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:singleLine="true"
+                android:text="Updated 10:12 AM" />
+
+            <FrameLayout
+                android:id="@+id/fl_refresh_preview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end">
+
+                <ImageView
+                    android:id="@+id/iv_refresh_preview"
+                    android:layout_width="21dp"
+                    android:layout_height="21dp"
+                    android:contentDescription="@string/refresh"
+                    android:src="@drawable/ic_baseline_sync_24"
+                    android:visibility="visible" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/ll_header_preview">
+
+            <RelativeLayout
+                android:id="@+id/rl_preview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp">
+
+                <RelativeLayout
+                    android:id="@+id/rl_preview_text_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:padding="@dimen/padding_small"
+                    style="@style/Widget.SMSWidget.AppWidget.InnerView">
+
+                    <ImageView
+                        android:id="@+id/unread"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginEnd="3dp"
+                        android:src="@drawable/ic_baseline_circle_red"
+                        android:contentDescription="@string/unread" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/unread"
+                        android:layout_toStartOf="@+id/tv_preview_date"
+                        android:drawablePadding="3dp"
+                        android:singleLine="true"
+                        android:text="Steve"
+                        android:textColor="@color/widget_text"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_preview_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="7:23 AM"
+                        android:textColor="@color/widget_text"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_preview_date"
+                        android:layout_marginBottom="3dp"
+                        android:maxLines="2"
+                        android:text="you don't have to put on pants today"
+                        android:textColor="@color/widget_text"
+                        android:textSize="12sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_preview_text_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rl_preview_text_1"
+                    android:layout_marginBottom="1dp"
+                    android:padding="@dimen/padding_small"
+                    style="@style/Widget.SMSWidget.AppWidget.InnerView">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@+id/tv_preview_date2"
+                        android:drawablePadding="3dp"
+                        android:singleLine="true"
+                        android:text="Jen &amp; Rob (Jen's Cell)"
+                        android:textColor="@color/widget_text"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_preview_date2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="7:17 AM"
+                        android:textColor="@color/widget_text"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_preview_date2"
+                        android:layout_marginBottom="0dp"
+                        android:maxLines="2"
+                        android:text="I have cake!"
+                        android:textColor="@color/widget_text"
+                        android:textSize="12sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_preview_text_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rl_preview_text_2"
+                    android:layout_marginBottom="1dp"
+                    android:padding="@dimen/padding_small"
+                    style="@style/Widget.SMSWidget.AppWidget.InnerView">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@+id/tv_preview_date3"
+                        android:drawablePadding="3dp"
+                        android:singleLine="true"
+                        android:text="MMS"
+                        android:textSize="12sp"
+                        android:textColor="@color/widget_text"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_preview_date3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="5:59 PM"
+                        android:textColor="@color/widget_text"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_preview_date3"
+                        android:layout_marginBottom="0dp"
+                        android:maxLines="2"
+                        android:text="Hailey Norris (work), Jefferson Matthews (Jeff), Landin Barnett, Mary Burton, Ezequiel Fischer, Jazlene Waller"
+                        android:textColor="@color/widget_text"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_preview_text_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rl_preview_text_3"
+                    android:layout_marginBottom="1dp"
+                    android:padding="@dimen/padding_small"
+                    style="@style/Widget.SMSWidget.AppWidget.InnerView">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@+id/tv_preview_date4"
+                        android:drawablePadding="3dp"
+                        android:singleLine="true"
+                        android:text="(888) 555-1212"
+                        android:textSize="12sp"
+                        android:textColor="@color/widget_text"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_preview_date4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="5:46 PM"
+                        android:textColor="@color/widget_text"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_preview_date4"
+                        android:layout_marginBottom="0dp"
+                        android:maxLines="2"
+                        android:text="We miss you, Stacy"
+                        android:textColor="@color/widget_text"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+
+            <ImageView
+                android:id="@+id/iv_edit_sms"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="2dp"
+                android:background="@drawable/ic_baseline_circle_24"
+                android:contentDescription="@string/create"
+                android:padding="3dp"
+                android:src="@drawable/ic_outline_edit_24" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_sms_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/unread_background"
+        android:gravity="center"
+        android:minWidth="17dp"
+        android:minHeight="17dp"
+        android:text="1"
+        android:layout_marginStart="6dp"
+        android:padding="2dp"
+        android:textColor="#ffffffff"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:visibility="visible" />
+
+</FrameLayout>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center"
+    android:layout_marginBottom="6dp"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tv_num_messages"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="@dimen/config_margin_big"
+        android:layout_marginTop="@dimen/config_margin_big"
+        android:text="@string/number_of_messages"
+        android:textSize="14sp" />
+
+    <Spinner
+        android:id="@+id/spinner_sms_messages"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/config_margin_small"
+        android:layout_marginEnd="@dimen/config_margin_big"
+        android:contentDescription="@string/number_of_messages"
+        android:minHeight="48dp"
+        android:spinnerMode="dropdown"
+        android:textAlignment="textEnd"
+        android:theme="@style/SpinnerText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_num_messages" />
+
+    <View
+        android:id="@+id/v_divider_1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/config_margin_big"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_sms_messages"
+        android:background="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/tv_num_lines"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/v_divider_1"
+        android:layout_marginStart="@dimen/config_margin_big"
+        android:layout_marginTop="@dimen/config_margin_big"
+        android:text="@string/maximum_number_of_lines"
+        android:textSize="14sp" />
+
+    <Spinner
+        android:id="@+id/spinner_sms_lines"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/config_margin_small"
+        android:layout_marginEnd="@dimen/config_margin_big"
+        android:contentDescription="@string/maximum_number_of_lines"
+        android:minHeight="48dp"
+        android:spinnerMode="dropdown"
+        android:textAlignment="textEnd"
+        android:theme="@style/SpinnerText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_num_lines" />
+
+    <View
+        android:id="@+id/v_divider_2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/config_margin_big"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_sms_lines"
+        android:background="@android:color/darker_gray" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_add_widget"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/config_margin_big"
+        android:backgroundTint="@color/purple_700"
+        android:contentDescription="@string/continue_txt"
+        android:text="@string/continue_txt"
+        android:textColor="@color/white"
+        app:cornerRadius="20dp"
+        app:layout_constraintTop_toBottomOf="@id/v_divider_2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/ad_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-3940256099942544/6300978111"
+        ads:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+    </com.google.android.gms.ads.AdView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
